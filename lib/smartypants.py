@@ -44,10 +44,10 @@ ASCII straight quotes, plain dashes, and plain dots, but your published
 posts (and final HTML output) will appear with smart quotes, em-dashes,
 and proper ellipses.
 
-SmartyPants does not modify characters within ``<pre>``, ``<code>``, ``<kbd>``,
-``<math>`` or ``<script>`` tag blocks. Typically, these tags are used to
-display text where smart quotes and other "smart punctuation" would not be
-appropriate, such as source code or example markup.
+SmartyPants does not modify characters within ``<pre>``, ``<code>``, ``<tt>``,
+``<kbd>``, ``<math>`` or ``<script>`` tag blocks. Typically, these tags are
+used to display text where smart quotes and other "smart punctuation" would
+not be appropriate, such as source code or example markup.
 
 
 Backslash Escapes
@@ -376,7 +376,7 @@ default_smartypants_attr = "1"
 
 import re
 
-tags_to_skip_regex = re.compile(r"<(/)?(pre|code|kbd|script|math)[^>]*>", re.I)
+tags_to_skip_regex = re.compile(r"<(/)?(pre|code|tt|kbd|script|math)[^>]*>", re.I)
 
 
 def verify_installation(request):
