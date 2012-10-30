@@ -824,7 +824,7 @@ def _tokenize(str):
 	#match = r"""(?: <! ( -- .*? -- \s* )+ > ) |  # comments
 	#		(?: <\? .*? \?> ) |  # directives
 	#		%s  # nested tags       """ % (nested_tags,)
-	tag_soup = re.compile(r"""([^<]*)(<[^>]*>)""")
+	tag_soup = re.compile(r"""(?s)([^<]*)(<!--.*?--\s*>|<[^>]*>)""")
 
 	token_match = tag_soup.search(str)
 
