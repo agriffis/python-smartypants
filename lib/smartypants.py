@@ -884,6 +884,11 @@ if __name__ == "__main__":
 				sp("""<p>He said &quot;Let's write some code.&quot; This code here <code>if True:\n\tprint &quot;Okay&quot;</code> is python code.</p>"""), 
 				   """<p>He said &#8220;Let&#8217;s write some code.&#8221; This code here <code>if True:\n\tprint &quot;Okay&quot;</code> is python code.</p>""")
 
+		def test_comments(self):
+			self.assertEqual(sp("--"), "&#8212;")
+			self.assertEqual(sp("-->"), "&#8212;>")
+			self.assertEqual(sp("<!-- comment -->"), "<!-- comment -->")
+			self.assertEqual(sp("<!-- <li>Fee-fi-of-fum</li> -->"), "<!-- <li>Fee-fi-of-fum</li> -->")
 
 		def test_ordinal_numbers(self):
 			self.assertEqual(sp("21st century"), "21st century")  # no effect.
