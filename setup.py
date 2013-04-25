@@ -13,8 +13,10 @@ The first two version numbers are Chad Miller's. The last two are
 mine.
 """
 
-# All of this is adapted from markdown2's setup.py.
-from distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 doclines = __doc__.split("\n")
 classifiers = """\
